@@ -65,13 +65,14 @@ defaults:
       layout: single
       comments: true
       read_time: true
+      related_posts: false
   #_pages
   - scope:
       path: ""
       type: pages
     values:
+      comments: false
       layout: single
-      comments: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
