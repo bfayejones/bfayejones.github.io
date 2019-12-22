@@ -65,7 +65,9 @@ defaults:
       layout: single
       comments: true
       read_time: true
-      related_posts: false
+      related: false
+      recent: false
+      toc: true
   #_pages
   - scope:
       path: ""
@@ -73,6 +75,7 @@ defaults:
     values:
       comments: false
       layout: single
+      toc: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

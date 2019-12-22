@@ -1,10 +1,22 @@
 ---
 title: "Test Post"
 date: 2019-12-21 22:20:00 -0600
-layout: posts
 ---
 
+## This is a heading
 I am creating some content for this test post.
 
 There sure is some content here.
 
+#### With a subheading
+
+And some more content that goes under that subheading
+
+Like this
+And this
+
+And this.
+
+#### And another subheading
+
+Before the end of the post
