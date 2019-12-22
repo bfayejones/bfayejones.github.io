@@ -41,7 +41,7 @@ repository: "bfayejones/bfayejones.github.io"
 comments: 
   provider: "utterances"
   utterances:
-    theme: "github-list"
+    theme: "github-light"
     issue_term: "pathname"
 
 include: 
