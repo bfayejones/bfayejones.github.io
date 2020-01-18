@@ -1,6 +1,6 @@
 ---
 title: "Setting up my Pihole with Google Fiber"
-date: 2020-1-17 22:20:00 -0600
+date: 2020-1-18 08:00:00 -0600
 ---
 
 # Setting up my Pihole with Google Fiber
