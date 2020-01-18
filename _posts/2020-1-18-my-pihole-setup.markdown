@@ -85,9 +85,7 @@ Often, configuration systems ignore configuration items which they don't expect 
  
  If you also have Google Fiber, it should _not_ be too hard, even if you literally understand nothing about this. 
  
- I tried to google stuff about how to determine what
-
-range of IP addresses were reserved, figuring there were some commands where I could query it from the command line. I found a lot of information which did not help me.
+ I tried to google stuff about how to determine what range of IP addresses were reserved, figuring there were some commands where I could query it from the command line. I found a lot of information which did not help me.
  
  It was an accident that I realized the web UI for google fiber has exactly the info I was looking for, laid out pretty clearly.
  
