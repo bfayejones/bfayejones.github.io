@@ -19,7 +19,7 @@ date: 2020-1-17 22:20:00 -0600
  Firstly, the hardware
  - [A raspberry pi zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
  - [The official raspberry pi power supply](https://www.raspberrypi.org/products/type-c-power-supply/)
-   - Given the lack of power hungry peripherals, under powering with a normal micro-usb charger that you already have would probably be fine. But if you are going to buy any charger for it, I do recommend this one due to the relative low price/high quality which can be hard to get with chargers. As of writing, they cost $8.00 each.
+   - Given the lack of power hungry peripherals, under powering with a normal micro-usb charger that you already have would probably be fine. But if you are going to buy any charger for it, I do recommend this one due to the relative low price/high quality which can be hard to get with chargers. As of writing, they cost about $8.00 each.
  - A 2GB microSD card
    - WARNING: this is now probably a bad choice. Go with a 4GB card. However, I did make it work with a 2GB card, so if you already bought a 2GB card based on an outdated guide, and got stuck when the raspbian image was too big, keep reading.
  - A computer which can:
@@ -70,6 +70,10 @@ Often, configuration systems ignore configuration items which they don't expect 
  This one's an opportunity to make things easier.
  If you're also working with a google fiber account, you have an easy option to find the IP address. After the pi starts up, you can see it on your admin page as a new device. It should be named something like raspberrypi, and it might take a bit for the pi to completely finish booting up and connecting to the wifi. Try refreshing the page after a few minutes if you still don't see it there.
  
+ This image shows me after I've reassigned the ip address, but it's the same way yours should look to.
+ 
+ ![finding the ip address](../_data/pihole_find_ip_censored.png)
+ 
  Once you see it, you can just use the IPv4 address that the admin UI shows you.
  
  #### Picking a static IP address
@@ -85,18 +89,18 @@ range of IP addresses were reserved, figuring there were some commands where I c
  It was an accident that I realized the web UI for google fiber has exactly the info I was looking for, laid out pretty clearly.
  
  Following fiber.google.com -> your wifi network -> Advanced -> Addresses -> DHCP Start/Stop Address
- <!-- TODO: add image-->
+ 
+![image of dhcp configuration](../_data/pihole_censored_dhcp.png)
  
  That's all the info you need from the admin page for now. Assuming no one on your system has had reason to change those values, it's very likely to be the same as what mine were: 192.168.1.100 and 192.168.1.254
  
  The last number in the sequence is the number you would want to change to choose the static IP for your pihole. You don't want any numbers in that DHCP range, so nothing between 100-254. Because of how IP addresses work, you also shouldn't try to go above 254. That leaves you 1-99, which is more than enough for all the static IPs you'll need.
  
- My instinct was to go with 192.168.1.1, which was a poor instinct, because the google fiber box uses that one already! I had to reconfigure my pihole after realizing. (Thankfully, it was just running pihole -r and waiting again) To be absolutely sure to avoid anything like that, go to that IP address in your browser like it's a normal url before selecting it. If it connects to something, that's a bad IP address because it's already being used! You want to see an error similar to this one:
- <!-- TODO: add image-->
+ My instinct was to go with 192.168.1.1, which was a poor instinct, because the google fiber box uses that one already! I had to reconfigure my pihole after realizing. (Thankfully, it was just running pihole -r and waiting again) To be absolutely sure to avoid anything like that, go to that IP address in your browser like it's a normal url before selecting it. If it connects to something, that's a bad IP address because it's already being used! If you're on Chrome, you want to see an error similar to this one:
  
- If you get that error and the IP address is outside the DHCP address range mentioned above, you should be good.
+![Image of error, as it looks in chrome](../_data/expected_error_chrome.png)
  
- <!-- TODO: finish this section -->
+ If you get that error and the IP address is outside the DHCP address range mentioned above, you should be good to use it. I ended up choosing 192.168.1.2, and you'll probably be safe to do the same.
  
  #### Setting the pi as the DNS server
  
@@ -104,6 +108,12 @@ range of IP addresses were reserved, figuring there were some commands where I c
  
  From your network -> Advanced -> DNS
  
+ ![DNS config](../_data/pihole_dns_censored.png)
+ 
  You should find a radio button option for 'Automatic' or 'Custom'. Click custom and put the static ip you chose into the DNS server one. Feel free to leave the other two blank.
  
  After that, I went to admin and restarted the router box. I'm not sure it was actually necessary to get it to work, but it's not going to hurt, regardless.
+
+## Questions?
+
+If you're setting up the pihole, especially with google fiber and you have any questions, please feel free to comment below. In order to comment, you'll need to have a github account, which is free.
