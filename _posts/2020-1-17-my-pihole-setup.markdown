@@ -5,22 +5,14 @@ date: 2020-1-17 22:20:00 -0600
 
 # Setting up my Pihole with Google Fiber
  
- [Other people](https://blog.cryptoaustralia.org.au/why-you-need-network-wide-ad-blocker-pi-hole/) [have written](ADD_LINK) why pihole is cool and good and why you should get it.
- <!--
- TODO: add links to articles about pihole
- -->
+ [Other people](https://blog.cryptoaustralia.org.au/why-you-need-network-wide-ad-blocker-pi-hole/) have written why pihole is cool and good and why you should get it.
  
- Other people have also written guides to setting them up.
- <!--
- TODO: add links to the set up article
- -->
- 
+ [Other people](https://blog.cryptoaustralia.org.au/instructions-for-setting-up-pi-hole/) have also written guides to setting them up.
+
  I'm just going to write about my set up experience because:
  
- 1. It was way easier than I expected
+ 1. It was way easier than I expected to work with google fiber.
  2. I encountered some brief snags which made my instructions not exactly correct for me
- 
- So here goes.
  
  ## My supplies
  
@@ -41,7 +33,7 @@ date: 2020-1-17 22:20:00 -0600
  
  ## Steps & Snags
  
- I followed [these instructions](www.placeholder.com) which were generally very great.
+ I followed [these instructions](https://blog.cryptoaustralia.org.au/instructions-for-setting-up-pi-hole/) which were generally very great.
  
  There were a few snags, as well as some easier options I found.
  
@@ -49,7 +41,7 @@ date: 2020-1-17 22:20:00 -0600
  
  Firstly, that guide makes a big deal about 2GB being more than big enough for the microSD card, which was accurate at the time. However, the raspbian image has grown and now takes up some more space. So if you have not already obtained your microSD card, definitely get a 4GB or 8GB one.
  
- There is a somewhat not-great workaround for this, however. If you already got the 2GB card, you can go to [this page](www.placeholder.com) and find a raspbian image from around the time that article was written.
+ There is a somewhat not-great workaround for this, however. If you already got the 2GB card, you can go to [this page](http://downloads.raspberrypi.org/raspbian/images/) and find a raspbian image from around the time that article was written.
  
  It's much preferable to get a larger card and get an up-to-date OS image, however, for all the security updates. But this does allow you to finish setting up so you can order your replacement card while getting the benefits of pihole.
  
@@ -57,10 +49,20 @@ date: 2020-1-17 22:20:00 -0600
  
  The guide I followed told me to buy a raspberry pi w but then told me to plug my raspberry pi into the router via an ethernet, which wasn't going to happen. (I bought the W model to avoid that!)
  
- Thankfully, I did not need to connect the pi to a monitor and keyboard, as I was fearing I would need to. I followed [this guide](www.placeholder.com).
+ Thankfully, I did not need to connect the pi to a monitor and keyboard, as I was fearing I would need to. I followed [this guide](https://howchoo.com/g/ndy1zte2yjn/how-to-set-up-wifi-on-your-raspberry-pi-without-ethernet).
  
- <!-- TODO: finish section -->
- 
+If you're unsure which of the file formats to follow, I'd recommend trying this one:
+```
+country=US # Your 2-digit country code
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+network={
+    ssid="YOUR_NETWORK_NAME"
+    psk="YOUR_PASSWORD"
+    key_mgmt=WPA-PSK
+}
+```
+Often, configuration systems ignore configuration items which they don't expect to see. Therefore, selecting the max config can be the most likely way to ensure your system works as expected.
+
  This is why I included the login info at the beginning. If you are going to set up a pihole for someone else and you're setting up the microSD card ahead of time, you'll want to have that wifi info when you flash the image and prepare everything else on the microSD card.
  
  #### Finding the initial IP address of the raspberry pi
