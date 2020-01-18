@@ -72,7 +72,7 @@ Often, configuration systems ignore configuration items which they don't expect 
  
  This image shows me after I've reassigned the ip address, but it's the same way yours should look to.
  
- ![finding the ip address](../_resources/pihole_find_ip.png)
+ ![finding the ip address](https://raw.githubusercontent.com/bfayejones/bfayejones.github.io/pihole/_resources/pihole_find_ip.png)
  
  Once you see it, you can just use the IPv4 address that the admin UI shows you.
  
@@ -90,7 +90,7 @@ range of IP addresses were reserved, figuring there were some commands where I c
  
  Following fiber.google.com -> your wifi network -> Advanced -> Addresses -> DHCP Start/Stop Address
  
-![image of dhcp configuration](../_resources/pihole_dhcp.png)
+![image of dhcp configuration](https://raw.githubusercontent.com/bfayejones/bfayejones.github.io/pihole/_resources/pihole_dhcp.png)
  
  That's all the info you need from the admin page for now. Assuming no one on your system has had reason to change those values, it's very likely to be the same as what mine were: 192.168.1.100 and 192.168.1.254
  
@@ -98,7 +98,7 @@ range of IP addresses were reserved, figuring there were some commands where I c
  
  My instinct was to go with 192.168.1.1, which was a poor instinct, because the google fiber box uses that one already! I had to reconfigure my pihole after realizing. (Thankfully, it was just running pihole -r and waiting again) To be absolutely sure to avoid anything like that, go to that IP address in your browser like it's a normal url before selecting it. If it connects to something, that's a bad IP address because it's already being used! If you're on Chrome, you want to see an error similar to this one:
  
-![Image of error, as it looks in chrome](../_resources/expected_error_chrome.png)
+![Image of error, as it looks in chrome](https://raw.githubusercontent.com/bfayejones/bfayejones.github.io/pihole/_resources/expected_error_chrome.png)
  
  If you get that error and the IP address is outside the DHCP address range mentioned above, you should be good to use it. I ended up choosing 192.168.1.2, and you'll probably be safe to do the same.
  
@@ -108,7 +108,7 @@ range of IP addresses were reserved, figuring there were some commands where I c
  
  From your network -> Advanced -> DNS
  
- ![DNS config](../_resources/pihole_dns.png)
+ ![DNS config](https://raw.githubusercontent.com/bfayejones/bfayejones.github.io/pihole/_resources/pihole_dns.png)
  
  You should find a radio button option for 'Automatic' or 'Custom'. Click custom and put the static ip you chose into the DNS server one. Feel free to leave the other two blank.
  
