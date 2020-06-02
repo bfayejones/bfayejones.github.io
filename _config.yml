@@ -30,7 +30,8 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+#Set a specific version to avoid it changing without notice.
+remote_theme: mmistakes/minimal-mistakes@4.19.2
 minimal_mistakes_skin: dark
 plugins:
   - jekyll-feed
