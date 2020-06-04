@@ -57,4 +57,4 @@ If you lose access entirely, you have lost all your data within Keybase, but you
 
 ## Further resources
 
-I tried to distill the most important bits of https://book.keybase.io/account for a new user, but the full page there is valuable reading regardless.
+I tried to distill the most important bits the [Account|https://book.keybase.io/account] chapter of the keybase book, without overloading with too many technical details. But all of the information there is good further reading for anyone curious.
